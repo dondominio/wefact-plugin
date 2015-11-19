@@ -62,13 +62,44 @@ class DonDominio implements IRegistrar
 			$this->dondominio = new DonDominioAPI( array(
 				'apiuser' => $this->User,
 				'apipasswd' => $this->Password,
-				'endpoint' => 'https://simple-api-test.dondominio.net'
+				'endpoint' => 'https://simple-api.dondominio.net',
+				'autoValidate' => true,
+				'versionCheck' => true,
+				'response' => array(
+					'throwExceptions' => true
+				),
+				'userAgent' => array(
+					'WeFactRegistrarPlugin' => dd_getVersion()
+				)
 			));
 		}catch( DonDominioAPI_Error $e ){
 			die( 'DonDominio: Invalid username or password' );
 		}
 		
 		return $this->dondominio;
+	}
+	
+	function dd_getVersion()
+	{
+		$versionFile = __DIR__ . '/version.json';
+		
+		if( !file_exists( $versionFile )){
+			return 'unknown';
+		}
+		
+		$json = @file_get_contents( $versionFile );
+		
+		if( empty( $json )){
+			return 'unknown';
+		}
+		
+		$versionInfo = json_decode( $json, true );
+		
+		if( !is_array( $versionInfo ) || !array_key_exists( 'version', $versionInfo )){
+			return 'unknown';
+		}
+		
+		return $versionInfo['version'];
 	}
 
 	/**
