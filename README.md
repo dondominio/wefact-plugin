@@ -46,7 +46,6 @@ Depending on the TLDs you want to support, you will need to create the following
 | --- | ---------- | ---------- | ---------- |
 | .aero | Aero ID<br>Aero Password | aeroid<br>aeropassword | Text<br>Text |
 | .cat<br>.pl<br>.eus<br>.gal | Intended Use | intendeduse | Text |
-| .coop | CVC | cvc | Text |
 | .jobs | Registrant Website<br>Admin Website<br>Tech Website<br>Billing Website | ownerwebsite<br>adminwebsite<br>techwebsite<br>billingwebsite | Text<br>Text<br>Text<br>Text |
 | .lawyer<br>.attorney<br>.dentist<br>.airforce<br>.army<br>.navy | Contact Info | contactinfo | Text |
 | .ltda | Authority<br>License Number | authority<br>license | Text<br>Text |
