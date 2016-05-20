@@ -445,7 +445,6 @@ class DonDominio implements IRegistrar
 				'aeroId' => ( $whois->ownercustom->aeroid ) ? $whois->ownercustom->aeroid : '',
 				'aeroPass' => ( $whois->ownercustom->aeropass ) ? $whois->ownercustom->aeropass : '',
 				'domainIntendedUse' => ( $whois->ownercustom->intendeduse ) ? $whois->ownercustom->intendeduse : '',
-				'coopCVC' => ( $whois->ownercustom->cvc ) ? $whois->ownercustom->cvc : '',
 				'ownerDateOfBirth' => ( $whois->ownercustom->dateofbirth ) ? $whois->ownercustom->dateofbirth : '',
 				'ownerPlaceOfBirth' => ( $whois->ownercustom->placeofbirth ) ? $whois->ownercustom->placeofbirth : '',
 				'lawaccid' => ( $whois->ownercustom->accid ) ? $whois->ownercustom->accid : '',
